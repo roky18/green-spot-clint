@@ -1,10 +1,22 @@
 import { Link, NavLink } from "react-router";
+import icon from "../../assets/Grn-icon.jpg"
+import logo from "../../assets/Greenspot500x500-1.jpg"
+import { use } from "react";
+import { AuthContext } from "../Contex/AuthContex";
 
 
 
 const Navbar = () => {
-  
- 
+  const { user, logout } = use(AuthContext);
+  const handleLogout = () => {
+ logout()
+      .then(() => {
+        alert("You Logged Out successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <div className="flex">
@@ -12,7 +24,7 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/games">Games</NavLink>
+          <NavLink to="/products">Products</NavLink>
         </li>
         <li>
           <NavLink to="/profile">Profile</NavLink>
@@ -48,15 +60,15 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <img className="w-10 rounded-xl" src="" alt="" />
+          <img className="w-20 rounded-xl" src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        {/* <div className="login-btn navbar-end flex gap-2">
+        <div className="login-btn navbar-end flex gap-2">
           <img
             className="w-10 h-10 rounded-full"
-            src={`${user ? user.photoURL : profileIcon}`}
+            src={`${user ? user.photoURL : icon}`}
             alt=""
           />
           {user ? (
@@ -70,7 +82,7 @@ const Navbar = () => {
               </Link>
             </button>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
