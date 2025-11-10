@@ -1,15 +1,13 @@
 import { Link, NavLink } from "react-router";
-import icon from "../../assets/Grn-icon.jpg"
-import logo from "../../assets/Greenspot500x500-1.jpg"
+import icon from "../../assets/Grn-icon.jpg";
+import logo from "../../assets/logo.png";
 import { use } from "react";
 import { AuthContext } from "../Contex/AuthContex";
-
-
 
 const Navbar = () => {
   const { user, logout } = use(AuthContext);
   const handleLogout = () => {
- logout()
+    logout()
       .then(() => {
         alert("You Logged Out successfully");
       })
@@ -24,17 +22,17 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/products">Products</NavLink>
+          <NavLink to="/issues">Issues</NavLink>
         </li>
         <li>
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/register">Register</NavLink>
         </li>
       </div>
     </>
   );
   return (
     <div>
-      <div className="navbar bg-base-100  shadow-sm">
+      <div className="navbar bg-amber-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,7 +58,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <img className="w-20 rounded-xl" src={logo} alt="" />
+          <img className="w-30 h-10 rounded-xl" src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -72,7 +70,10 @@ const Navbar = () => {
             alt=""
           />
           {user ? (
-            <button onClick={handleLogout} className="btn btn-outline btn-success px-6">
+            <button
+              onClick={handleLogout}
+              className="btn btn-outline btn-success px-6"
+            >
               LogOut
             </button>
           ) : (

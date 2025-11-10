@@ -1,7 +1,7 @@
 import React, { use, useRef, useState } from 'react';
 import { AuthContext } from '../Contex/AuthContex';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { PiEyeSlash } from 'react-icons/pi';
+import { PiEyeLight, PiEyeSlash } from 'react-icons/pi';
 
 const Login = () => {
      const [error, setError] = useState("");
