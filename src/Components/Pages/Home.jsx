@@ -1,10 +1,14 @@
 import React from "react";
 import Banner from "./Banner";
+import Category from "./Category";
+import RecentComplaints from "./RecentComplaints";
 
 const Home = () => {
   return (
-    <div className="w-1400px mx-auto">
+    <div>
       <Banner></Banner>
+      <Category></Category>
+      <RecentComplaints></RecentComplaints>
     </div>
   );
 };

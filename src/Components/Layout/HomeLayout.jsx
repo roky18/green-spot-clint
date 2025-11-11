@@ -5,7 +5,7 @@ import Footer from "../Pages/Footer";
 
 const HomeLayout = () => {
   return (
-    <div>
+    <div className="bg-amber-100">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

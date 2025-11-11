@@ -46,7 +46,7 @@ const Login = () => {
   };
     return (
        <div className="w-11/12 mx-auto flex justify-center items-center">
-      <div className="hero bg-base-200  min-h-screen">
+      <div className="hero  min-h-screen">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl text-fuchsia-500 font-bold">

@@ -9,8 +9,13 @@ const Footer = () => {
       <footer className="footer footer-horizontal footer-center bg-gradient-to-r from-[#3700ffbb] to-[#00d40ec2] text-gray-200  p-10">
         <aside>
           <img className="w-10 rounded-xl" src={icon} alt="" />
+          <p>
+            At Green Spot, we believe in green thinking, a clean environment,
+            and transparency in action. Join us as we build a healthier, greener
+            future—together.
+          </p>
           <p className="font-bold">
-            <span className="text-green-300">GREEN SPOT</span> Industries Ltd.
+            <span className="text-indigo-600">GREEN SPOT</span> Industries Ltd.
             <br />
             ROKY tech since 1992
           </p>
@@ -36,8 +41,20 @@ const Footer = () => {
 
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
           <nav className="grid grid-flow-col gap-4">
-            <a  href="https://github.com/roky18" target="_blank" className="link link-hover">About us</a>
-            <a href="https://github.com/roky18" target="_blank" className="link link-hover">Contact</a>
+            <a
+              href="https://github.com/roky18"
+              target="_blank"
+              className="link link-hover"
+            >
+              About us
+            </a>
+            <a
+              href="https://github.com/roky18"
+              target="_blank"
+              className="link link-hover"
+            >
+              Contact
+            </a>
             <a className="link link-hover">Jobs</a>
           </nav>
         </aside>
