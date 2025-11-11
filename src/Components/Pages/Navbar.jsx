@@ -3,13 +3,20 @@ import icon from "../../assets/Grn-icon.jpg";
 import logo from "../../assets/logo.png";
 import { use } from "react";
 import { AuthContext } from "../Contex/AuthContex";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logout } = use(AuthContext);
   const handleLogout = () => {
     logout()
       .then(() => {
-        alert("You Logged Out successfully");
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "Your Logout successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -17,22 +24,47 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <div className="flex">
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/issues">Issues</NavLink>
-        </li>
-        <li>
-          <NavLink to="/register">Register</NavLink>
-        </li>
+      <div>
+        {user ? (
+          <div className="flex text-white text-xl">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/allIssues">All Issues</NavLink>
+            </li>
+            <li>
+              <NavLink to="/addIssues">Add Issues</NavLink>
+            </li>
+            <li>
+              <NavLink to="/myIssues">My Issues</NavLink>
+            </li>
+            <li>
+              <NavLink to="/myContribution">My Contribution</NavLink>
+            </li>
+          </div>
+        ) : (
+          <div className="flex text-white text-xl">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/issues">Issues</NavLink>
+            </li>
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+              <NavLink to="/register">Register</NavLink>
+            </li>
+          </div>
+        )}
       </div>
     </>
   );
   return (
     <div>
-      <div className="navbar bg-pink-400 mb-6 shadow-sm">
+      <div className="navbar  bg-pink-400 mb-6 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +85,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-blue-500 items-center rounded-box z-1 mt-3 w-[400px] p-2 shadow"
             >
               {links}
             </ul>

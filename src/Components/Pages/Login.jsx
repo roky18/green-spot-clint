@@ -1,10 +1,11 @@
-import React, { use, useRef, useState } from 'react';
-import { AuthContext } from '../Contex/AuthContex';
-import { Link, useLocation, useNavigate } from 'react-router';
-import { PiEyeLight, PiEyeSlash } from 'react-icons/pi';
+import React, { use, useRef, useState } from "react";
+import { AuthContext } from "../Contex/AuthContex";
+import { Link, useLocation, useNavigate } from "react-router";
+import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
+import Swal from "sweetalert2";
 
 const Login = () => {
-     const [error, setError] = useState("");
+  const [error, setError] = useState("");
   const { signIn, forgetPassword } = use(AuthContext);
   const [showPassWord, setShowPassWord] = useState(false);
   const emailRef = useRef();
@@ -20,6 +21,13 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "Your Login successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
@@ -44,8 +52,8 @@ const Login = () => {
         alert(errorMessage);
       });
   };
-    return (
-       <div className="w-11/12 mx-auto flex justify-center items-center">
+  return (
+    <div className="w-11/12 mx-auto flex justify-center items-center">
       <div className="hero  min-h-screen">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
@@ -144,7 +152,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Login;

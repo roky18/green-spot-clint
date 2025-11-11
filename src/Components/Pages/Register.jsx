@@ -14,7 +14,7 @@ const Register = () => {
     const photoUrl = e.target.photoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log({ name, photoUrl, email, password });
+    console.log({ name, photoUrl, email, password });
 
     const PasswordFilter = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
@@ -55,7 +55,7 @@ const Register = () => {
               Register your account
             </h1>
           </div>
-          <div className="card bg-orange-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-fuchsia-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleRegister}>
               <div className="card-body">
                 <fieldset className="fieldset">
