@@ -49,7 +49,7 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/issues">Issues</NavLink>
+              <NavLink to="/allIssues">All Issues</NavLink>
             </li>
             <li>
               <NavLink to="/login">Login</NavLink>
@@ -97,6 +97,7 @@ const Navbar = () => {
         </div>
         <div className="login-btn navbar-end flex gap-2">
           <img
+            referrerPolicy="no-referrer"
             className="w-10 h-10 rounded-full"
             src={`${user ? user.photoURL : icon}`}
             alt=""

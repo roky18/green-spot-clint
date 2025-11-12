@@ -12,6 +12,10 @@ const Category = () => {
         <div className=" rounded-xl bg-emerald-200 space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={garbage} />
           <h3 className="text-indigo-500">Garbage</h3>
+          <p className="text-xs text-gray-500">
+            Waste, litter, plastics or other unwanted materials dumped or left
+            in public spaces without proper disposal.
+          </p>
           <button className="btn btn-dash btn-secondary btn-xs">
             See Details
           </button>
@@ -20,6 +24,10 @@ const Category = () => {
         <div className=" bg-fuchsia-200 rounded-xl  space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={illegal} />
           <h3 className="text-indigo-500">Illegal Construction</h3>
+          <p className="text-xs text-gray-500">
+            Buildings, extensions or modifications made without required
+            permits, approvals or in violation of regulations.
+          </p>
           <button className="btn btn-dash btn-secondary btn-xs">
             See Details
           </button>
@@ -31,6 +39,11 @@ const Category = () => {
             src={PPbroken}
           />
           <h3 className="text-indigo-500">Broken Public Property</h3>
+          <p className="text-xs text-gray-500">
+            Public infrastructure or facilities (benches, railings, lighting,
+            signage, etc.) that are damaged, malfunctioning or neglected and
+            pose a risk to users.
+          </p>
           <button className="btn btn-dash btn-secondary btn-xs">
             See Details
           </button>
@@ -38,6 +51,10 @@ const Category = () => {
         <div className=" bg-rose-200 rounded-xl  space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={RoadDam} />
           <h3 className="text-indigo-500">Road Damage</h3>
+          <p className="text-xs text-gray-500">
+            Defects, wear‑and‑tear or adverse conditions in a roadway (potholes,
+            cracks, subsidence) which make travel unsafe or inconvenient.
+          </p>
           <button className="btn btn-dash btn-secondary btn-xs">
             See Details
           </button>

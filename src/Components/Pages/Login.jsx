@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { signIn, forgetPassword } = use(AuthContext);
+  const { signIn, forgetPassword, signInWithGoogle } = use(AuthContext);
   const [showPassWord, setShowPassWord] = useState(false);
   const emailRef = useRef();
 
@@ -36,6 +36,24 @@ const Login = () => {
       });
   };
 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "Your Login successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const handleShowPassword = (e) => {
     e.preventDefault();
     setShowPassWord(!showPassWord);
@@ -45,7 +63,11 @@ const Login = () => {
     const email = emailRef.current.value;
     forgetPassword(email)
       .then(() => {
-        alert("Please check Your Email");
+        Swal.fire({
+          title: "Please check Your Email!",
+          icon: "success",
+          draggable: true,
+        });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -109,7 +131,10 @@ const Login = () => {
                     Login
                   </button>
 
-                  <button className="btn mt-5 hover:bg-amber-200 bg-white text-black border-[#e5e5e5]">
+                  <button
+                    onClick={handleGoogleSignIn}
+                    className="btn mt-5 hover:bg-amber-200 bg-white text-black border-[#e5e5e5]"
+                  >
                     <svg
                       aria-label="Google logo"
                       width="16"
