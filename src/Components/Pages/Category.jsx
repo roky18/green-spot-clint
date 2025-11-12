@@ -3,11 +3,14 @@ import garbage from "../../assets/garbage.jpg";
 import illegal from "../../assets/illegal const.jpg";
 import PPbroken from "../../assets/public-pro-brok.webp";
 import RoadDam from "../../assets/Road dame.jpg";
+import { Link } from "react-router";
 
 const Category = () => {
   return (
-    <div className="max-w-[1400px] mx-auto flex flex-col items-center my-6">
-      <h2 className="font-bold  mb-8 text-cyan-500 text-4xl ">Category</h2>
+    <div className="max-w-[1400px] pb-15 bg-orange-50 mx-auto flex flex-col items-center my-6">
+      <h2 className="font-bold mt-16 mb-12 text-cyan-500 text-4xl ">
+        Category
+      </h2>
       <section className=" w-11/12 grid lg:grid-cols-4 md:grid-cols-3 gap-6 text-center">
         <div className=" rounded-xl bg-emerald-200 space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={garbage} />
@@ -16,9 +19,11 @@ const Category = () => {
             Waste, litter, plastics or other unwanted materials dumped or left
             in public spaces without proper disposal.
           </p>
-          <button className="btn btn-dash btn-secondary btn-xs">
-            See Details
-          </button>
+          <Link to="/allIssues">
+            <button className="btn btn-dash btn-secondary btn-xs">
+              Show All
+            </button>
+          </Link>
         </div>
 
         <div className=" bg-fuchsia-200 rounded-xl  space-y-2 font-semibold p-4">
@@ -28,9 +33,11 @@ const Category = () => {
             Buildings, extensions or modifications made without required
             permits, approvals or in violation of regulations.
           </p>
-          <button className="btn btn-dash btn-secondary btn-xs">
-            See Details
-          </button>
+          <Link to="/allIssues">
+            <button className="btn btn-dash btn-secondary btn-xs">
+              Show All
+            </button>
+          </Link>
         </div>
 
         <div className=" bg-lime-200 rounded-xl  space-y-2 font-semibold p-4">
@@ -44,9 +51,11 @@ const Category = () => {
             signage, etc.) that are damaged, malfunctioning or neglected and
             pose a risk to users.
           </p>
-          <button className="btn btn-dash btn-secondary btn-xs">
-            See Details
-          </button>
+          <Link to="/allIssues">
+            <button className="btn btn-dash btn-secondary btn-xs">
+              Show All
+            </button>
+          </Link>
         </div>
         <div className=" bg-rose-200 rounded-xl  space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={RoadDam} />
@@ -55,9 +64,11 @@ const Category = () => {
             Defects, wear‑and‑tear or adverse conditions in a roadway (potholes,
             cracks, subsidence) which make travel unsafe or inconvenient.
           </p>
-          <button className="btn btn-dash btn-secondary btn-xs">
-            See Details
-          </button>
+          <Link to="/allIssues">
+            <button className="btn btn-dash btn-secondary btn-xs">
+              Show All
+            </button>
+          </Link>
         </div>
       </section>
     </div>
