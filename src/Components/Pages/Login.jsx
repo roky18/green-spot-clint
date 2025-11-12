@@ -39,7 +39,25 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        // user data sent and create a new user--->
+        const newIssue = {
+          name: result.user.displayName,
+          email: result.user.email,
+          image: result.user.photoURL,
+        };
+        // create new  issue-->>
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newIssue),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("user data save Mdb done", data);
+          });
+
         Swal.fire({
           position: "top",
           icon: "success",

@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import icon from "../../assets/Grn-icon.jpg";
 import logo from "../../assets/logo.png";
 import { use } from "react";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logout } = use(AuthContext);
+  const navigate = useNavigate();
   const handleLogout = () => {
     logout()
       .then(() => {
@@ -17,6 +18,7 @@ const Navbar = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);
