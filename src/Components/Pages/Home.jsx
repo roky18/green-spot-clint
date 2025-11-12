@@ -3,6 +3,8 @@ import Banner from "./Banner";
 import Category from "./Category";
 import RecentComplaints from "./RecentComplaints";
 
+
+
 const Home = () => {
   return (
     <div>
