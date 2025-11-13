@@ -93,7 +93,7 @@ const RecentComplaints = () => {
 
               <div className="grid grid-cols-2 gap-15 ">
                 <div className="badge badge-soft badge-secondary">
-                  {complain.amount}$
+                  ${complain.amount}
                 </div>
                 <div className="card-actions">
                   <Link to={`/issueDetails/${complain._id}`}>

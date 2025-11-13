@@ -38,7 +38,7 @@ const AllIssues = () => {
 
               <div className="grid grid-cols-2 gap-15 ">
                 <div className="badge badge-soft badge-secondary">
-                  {issue.amount}$
+                  ${issue.amount}
                 </div>
                 <div className="card-actions">
                   <Link to={`/issueDetails/${issue._id}`}>
