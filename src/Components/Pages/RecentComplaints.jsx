@@ -9,7 +9,7 @@ const RecentComplaints = () => {
   const [complains, setComplains] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/resentComplain")
+    fetch("https://green-spot-api-server.vercel.app/resentComplain")
       .then((res) => res.json())
       .then((data) => {
         setComplains(data);

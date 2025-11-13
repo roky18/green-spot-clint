@@ -2,6 +2,7 @@ import React from "react";
 import icon from "../../assets/Grn-icon.jpg";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 import { GrYoutube } from "react-icons/gr";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -55,7 +56,9 @@ const Footer = () => {
             >
               Contact
             </a>
-            <a className="link link-hover">Jobs</a>
+            <Link to="/">
+              <a className="link link-hover">Home</a>
+            </Link>
           </nav>
         </aside>
       </footer>

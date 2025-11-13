@@ -9,7 +9,7 @@ const IssueDetails = () => {
   const bidModalRef = useRef(null);
   const { user } = use(AuthContext);
   // console.log(issue);
-  console.log(user);
+  // console.log(user);
 
   const handleModalOpen = () => {
     bidModalRef.current.showModal();
@@ -28,18 +28,18 @@ const IssueDetails = () => {
     const date = e.target.date.value;
     const addInfo = e.target.additionalInfo.value;
 
-    console.log(
-      issueId,
-      title,
-      name,
-      email,
-      amount,
-      phone,
-      address,
-      date,
-      addInfo,
-      category
-    );
+    // console.log(
+    //   issueId,
+    //   title,
+    //   name,
+    //   email,
+    //   amount,
+    //   phone,
+    //   address,
+    //   date,
+    //   addInfo,
+    //   category
+    // );
 
     const newDonet = {
       issueId: issueId,
@@ -54,7 +54,7 @@ const IssueDetails = () => {
       additionalInfo: addInfo,
     };
 
-    fetch("http://localhost:3000/myContribution", {
+    fetch("https://green-spot-api-server.vercel.app/myContribution", {
       method: "POST",
       headers: {
         "content-type": "application/json",
