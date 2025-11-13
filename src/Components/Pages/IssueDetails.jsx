@@ -1,8 +1,10 @@
 import { use, useRef } from "react";
 import { useLoaderData } from "react-router";
 import { AuthContext } from "../Contex/AuthContex";
+import Swal from "sweetalert2";
 
 const IssueDetails = () => {
+  const today = new Date().toISOString();
   const issue = useLoaderData();
   const bidModalRef = useRef(null);
   const { user } = use(AuthContext);
@@ -15,6 +17,63 @@ const IssueDetails = () => {
 
   const handleBidSubmit = (e) => {
     e.preventDefault();
+    const issueId = issue._id;
+    const category = issue.category;
+    const title = issue.title;
+    const name = e.target.contributorName.value;
+    const email = e.target.email.value;
+    const amount = e.target.amount.value;
+    const phone = e.target.phone.value;
+    const address = e.target.address.value;
+    const date = e.target.date.value;
+    const addInfo = e.target.additionalInfo.value;
+
+    console.log(
+      issueId,
+      title,
+      name,
+      email,
+      amount,
+      phone,
+      address,
+      date,
+      addInfo,
+      category
+    );
+
+    const newDonet = {
+      issueId: issueId,
+      title: title,
+      category: category,
+      amount: amount,
+      name: name,
+      email: email,
+      phone: phone,
+      address: address,
+      date: date,
+      additionalInfo: addInfo,
+    };
+
+    fetch("http://localhost:3000/myContribution", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newDonet),
+    })
+      .then((res) => res.json())
+      .then((date) => {
+        if (date.insertedId) {
+          bidModalRef.current.close();
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Your Donet has been successfully Save on MongoDB",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        }
+      });
   };
 
   return (
@@ -100,8 +159,7 @@ const IssueDetails = () => {
                       name="amount"
                       required
                       className="input input-bordered w-full"
-                      readOnly
-                      defaultValue={issue.amount}
+                      placeholder="Your Donation"
                     />
                   </div>
 
@@ -158,6 +216,19 @@ const IssueDetails = () => {
                       placeholder="Your address"
                     />
                   </div>
+                  <div>
+                    <label className="label">
+                      <span className="label-text">Date</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="date"
+                      required
+                      className="input input-bordered w-full"
+                      readOnly
+                      defaultValue={today}
+                    />
+                  </div>
 
                   <div>
                     <label className="label">
@@ -178,8 +249,7 @@ const IssueDetails = () => {
 
                 <div className="modal-action">
                   <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Close</button>
+                    <button className="btn">Cancel</button>
                   </form>
                 </div>
               </div>
