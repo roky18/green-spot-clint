@@ -9,6 +9,7 @@ import AddIssues from "../Pages/AddIssues";
 import MyIssues from "../Pages/MyIssues";
 import MyContribution from "../Pages/MyContribution";
 import IssueDetails from "../Pages/IssueDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -33,21 +34,37 @@ const router = createBrowserRouter([
       },
       {
         path: "/addIssues",
-        element: <AddIssues></AddIssues>,
+        element: (
+          <PrivateRoute>
+            <AddIssues></AddIssues>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/issueDetails/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/issues/${params.id}`),
-        element: <IssueDetails></IssueDetails>,
+        element: (
+          <PrivateRoute>
+            <IssueDetails></IssueDetails>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myIssues",
-        element: <MyIssues></MyIssues>,
+        element: (
+          <PrivateRoute>
+            <MyIssues></MyIssues>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myContribution",
-        element: <MyContribution></MyContribution>,
+        element: (
+          <PrivateRoute>
+            <MyContribution></MyContribution>
+          </PrivateRoute>
+        ),
       },
       {
         path: "*",

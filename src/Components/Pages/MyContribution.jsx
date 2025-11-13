@@ -21,7 +21,7 @@ const MyContribution = () => {
     }
   }, [user]);
   return (
-    <div className="overflow-x-auto w-full px-4 sm:px-6 bg-emerald-100 my-8 p-6 max-w-11/12 mx-auto rounded-4xl lg:px-8 mt-8">
+    <div className="overflow-x-auto w-full px-4 sm:px-6 bg-gray-100 my-8 p-6 max-w-11/12 mx-auto rounded-4xl lg:px-8 mt-8">
       <h2 className="text-3xl text-center font-bold text-primary mb-4">
         <span className="text-green-500">My</span> Contributions
       </h2>

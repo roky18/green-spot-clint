@@ -19,7 +19,7 @@ const AllIssues = () => {
       <h2 className="font-bold mt-8 mb-10  text-indigo-500 text-4xl ">
         All Issues : {issues.length}
       </h2>
-      <div className="w-11/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {issues.map((issue) => (
           <div key={issue._id} className=" bg-green-100 shadow-2xl rounded-4xl">
             <figure className="px-8 pt-10">

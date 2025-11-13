@@ -1,5 +1,5 @@
 import { use, useRef } from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Contex/AuthContex";
 import Swal from "sweetalert2";
 
@@ -121,11 +121,15 @@ const IssueDetails = () => {
             </div>
             <button
               onClick={handleModalOpen}
-              className="btn btn-accent text-white bg-secondary hover:bg-secondary-focus px-6 py-2 w-full mt-20 rounded-lg"
+              className="btn btn-accent text-white bg-secondary hover:bg-secondary-focus px-6 py-2 w-full mt-13 rounded-lg"
             >
               Pay Clean-Up Contribution
             </button>
-
+            <Link className="flex mt-9 justify-center" to="/allIssues">
+              <button className="btn btn-soft btn-secondary ">
+                Back to All Issues
+              </button>
+            </Link>
             {/* Modall->> */}
 
             <dialog
