@@ -8,6 +8,7 @@ import AllIssues from "../Pages/AllIssues";
 import AddIssues from "../Pages/AddIssues";
 import MyIssues from "../Pages/MyIssues";
 import MyContribution from "../Pages/MyContribution";
+import IssueDetails from "../Pages/IssueDetails";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/addIssues",
         element: <AddIssues></AddIssues>,
+      },
+      {
+        path: "/issueDetails/:id",
+        element: <IssueDetails></IssueDetails>,
       },
       {
         path: "/myIssues",

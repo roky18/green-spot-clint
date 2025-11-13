@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { AiOutlineWarning } from "react-icons/ai";
-import {
-  BiHorizontalLeft,
-  BiJoystick,
-  BiJoystickAlt,
-  BiLogoFlutter,
-} from "react-icons/bi";
+import { BiHorizontalLeft, BiLogoFlutter } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
 import { Link } from "react-router";
 
@@ -80,7 +75,7 @@ const RecentComplaints = () => {
         {complains.map((complain) => (
           <div
             key={complain._id}
-            className=" bg-violet-200 shadow-2xl rounded-4xl"
+            className=" bg-green-200 shadow-2xl rounded-4xl"
           >
             <figure className="px-8 pt-10">
               <img
@@ -101,9 +96,11 @@ const RecentComplaints = () => {
                   {complain.amount}$
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-dash btn-secondary btn-xs">
-                    See Details
-                  </button>
+                  <Link to={`/issueDetails/${complain._id}`}>
+                    <button className="btn btn-dash btn-secondary btn-xs">
+                      See Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -111,7 +108,7 @@ const RecentComplaints = () => {
         ))}
       </div>
       <Link to="/allIssues">
-        <button className="btn mt-12 mb-16 btn-soft btn-secondary mt-6">
+        <button className="btn mt-12 mb-16 btn-soft btn-secondary">
           All Issues
         </button>
       </Link>

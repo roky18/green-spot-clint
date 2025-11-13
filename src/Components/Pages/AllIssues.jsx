@@ -41,9 +41,11 @@ const AllIssues = () => {
                   {issue.amount}$
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-dash btn-secondary btn-xs">
-                    See Details
-                  </button>
+                  <Link to={`/issueDetails/${issue._id}`}>
+                    <button className="btn btn-dash btn-secondary btn-xs">
+                      See Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

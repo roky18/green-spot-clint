@@ -7,6 +7,21 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+# Community Cleanliness & Issue Reporting Portal
+
+Live Site:
+
+## 🔍 Project Overview
+
+This is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application where users can report, track and manage cleanliness & public-space related issues in their local area. The portal allows users to request clean-up drives, make small community-contributions, and view their personal history of reported issues.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, React Router, Tailwind CSS, daisyUI, React Icons
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase Auth
+- **Hosting:** Client – Firebase Hosting; Server – Vercel or similar
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
