@@ -9,7 +9,7 @@ const RecentComplaints = () => {
   const [complains, setComplains] = useState([]);
 
   useEffect(() => {
-    fetch("https://green-spot-api-server.vercel.app/resentComplain")
+    fetch("http://localhost:3000/resentComplain")
       .then((res) => res.json())
       .then((data) => {
         setComplains(data);
@@ -22,7 +22,7 @@ const RecentComplaints = () => {
   return (
     <div className="max-w-[1400px] bg-orange-50  mx-auto flex flex-col items-center my-6">
       <h2 className="font-bold mt-10  text-indigo-500 text-4xl ">
-        Recent Complaints
+        <span className="text-green-500">Recent</span> Complaints
       </h2>
       <Marquee className="bg-amber-100 mt-5 mb-6">
         <h3 className="text-2xl text-red-500 p-3 font-bold flex justify-center items-center text-center">

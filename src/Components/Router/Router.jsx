@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/issueDetails/:id",
         loader: ({ params }) =>
-          fetch(`https://green-spot-api-server.vercel.app/issues/${params.id}`),
+          fetch(`http://localhost:3000/issues/${params.id}`),
         element: (
           <PrivateRoute>
             <IssueDetails></IssueDetails>,

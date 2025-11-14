@@ -56,9 +56,14 @@ const Footer = () => {
             >
               Contact
             </a>
-            <Link to="/">
-              <a className="link link-hover">Home</a>
-            </Link>
+
+            <a
+              href="http://programming-hero.com/"
+              target="_blank"
+              className="link link-hover"
+            >
+              PGH
+            </a>
           </nav>
         </aside>
       </footer>

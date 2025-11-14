@@ -23,16 +23,16 @@ This is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web applicati
 - **Hosting:** Client – Firebase Hosting; Server – Vercel
 - **Others:**
   [
-  "@tailwindcss/vite": "^4.1.17",
-  "axios": "^1.13.2",
-  "firebase": "^12.5.0",
-  "react": "^19.1.1",
-  "react-dom": "^19.1.1",
-  "react-fast-marquee": "^1.6.5",
-  "react-icons": "^5.5.0",
-  "react-router": "^7.9.5",
-  "sweetalert2": "^11.26.3",
-  "tailwindcss": "^4.1.17"
+  ## --> "@tailwindcss/vite": "^4.1.17",
+  ## --> "axios": "^1.13.2",
+  ## --> "firebase": "^12.5.0",
+  ## --> "react": "^19.1.1",
+  ## --> "react-dom": "^19.1.1",
+  ## --> "react-fast-marquee": "^1.6.5",
+  ## --> "react-icons": "^5.5.0",
+  ## --> "react-router": "^7.9.5",
+  ## --> "sweetalert2": "^11.26.3",
+  ## --> "tailwindcss": "^4.1.17"
   ]
 
 ## React Compiler

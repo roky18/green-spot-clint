@@ -5,7 +5,7 @@ const AllIssues = () => {
   const [issues, setIssues] = useState([]);
 
   useEffect(() => {
-    fetch("https://green-spot-api-server.vercel.app/issues")
+    fetch("http://localhost:3000/issues")
       .then((res) => res.json())
       .then((data) => {
         setIssues(data);

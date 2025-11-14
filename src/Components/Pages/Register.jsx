@@ -17,7 +17,7 @@ const Register = () => {
           image: result.user.photoURL,
         };
         // create new  issue-->>
-        fetch("https://green-spot-api-server.vercel.app/users", {
+        fetch("http://localhost:3000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

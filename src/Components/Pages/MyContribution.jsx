@@ -2,16 +2,17 @@ import React, { use, useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { AuthContext } from "../Contex/AuthContex";
 
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+
 const MyContribution = () => {
   const { user } = use(AuthContext);
-  console.log(user);
+
   const [contribution, setContribution] = useState([]);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(
-        `https://green-spot-api-server.vercel.app/myContribution?email=${user.email}`
-      )
+      fetch(`http://localhost:3000/myContribution?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);
@@ -22,6 +23,35 @@ const MyContribution = () => {
         });
     }
   }, [user]);
+
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.text("My Contributions Report", 14, 15);
+
+    const tableColumn = [
+      "SL",
+      "Issue Title",
+      "Category",
+      "Paid Amount",
+      "Date",
+    ];
+    const tableRows = contribution.map((item, index) => [
+      index + 1,
+      item.title,
+      item.category,
+      `$${item.amount}`,
+      item.date,
+    ]);
+
+    autoTable(doc, {
+      head: [tableColumn],
+      body: tableRows,
+      startY: 20,
+    });
+
+    doc.save("my_contributions.pdf");
+  };
+
   return (
     <div className="overflow-x-auto w-full px-4 sm:px-6 bg-gray-100 my-8 p-6 max-w-11/12 mx-auto rounded-4xl lg:px-8 mt-8">
       <h2 className="text-3xl text-center font-bold text-primary mb-4">
@@ -50,7 +80,10 @@ const MyContribution = () => {
                 <td className="text-blue-500 font-semibold">${item.amount}</td>
                 <td>{item.date}</td>
                 <td>
-                  <button className="btn btn-sm btn-accent flex items-center gap-1">
+                  <button
+                    onClick={downloadPDF}
+                    className="btn btn-sm btn-accent flex items-center gap-1"
+                  >
                     <FaDownload size={14} />
                     Download
                   </button>
@@ -59,7 +92,7 @@ const MyContribution = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="5" className="text-center py-4 text-muted">
+              <td colSpan="6" className="text-center py-4 text-muted">
                 No contributions found.
               </td>
             </tr>

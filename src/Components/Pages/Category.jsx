@@ -9,7 +9,7 @@ const Category = () => {
   return (
     <div className="max-w-[1400px] pb-15 bg-orange-50 mx-auto flex flex-col items-center my-6">
       <h2 className="font-bold mt-16 mb-12 text-cyan-500 text-4xl ">
-        Category
+        <span className="text-green-500">Cate</span>gory
       </h2>
       <section className=" w-11/12 grid lg:grid-cols-4 md:grid-cols-3 gap-6 text-center">
         <div className=" rounded-xl bg-emerald-200 space-y-2 font-semibold p-4">

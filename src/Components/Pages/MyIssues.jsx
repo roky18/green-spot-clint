@@ -12,9 +12,7 @@ const MyIssues = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(
-        `https://green-spot-api-server.vercel.app/issues?email=${user.email}`
-      )
+      fetch(`http://localhost:3000/issues?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setIssues(data))
         .catch((err) => console.error(err));
@@ -37,14 +35,11 @@ const MyIssues = () => {
       status: e.target.status.value,
     };
 
-    fetch(
-      `https://green-spot-api-server.vercel.app/issues/${selectedIssue._id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedIssue),
-      }
-    )
+    fetch(`http://localhost:3000/issues/${selectedIssue._id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedIssue),
+    })
       .then((res) => res.json())
       .then((data) => {
         setIssues((prev) => prev.map((i) => (i._id === data._id ? data : i)));
@@ -64,7 +59,7 @@ const MyIssues = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://green-spot-api-server.vercel.app/issues/${issueId}`, {
+        fetch(`http://localhost:3000/issues/${issueId}`, {
           method: "DELETE",
         })
           .then(() => {

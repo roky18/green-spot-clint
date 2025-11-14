@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import {
   FaUsers,
   FaCheckCircle,
@@ -7,20 +7,36 @@ import {
 } from "react-icons/fa";
 
 const ExtraSec = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="py-12 bg-base-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">
-            Community Stats
+            <span className="text-green-500">Community</span> Stats
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="stat shadow hover:bg-cyan-200 rounded-lg">
               <div className="stat-figure text-primary">
                 <FaUsers size={40} />
               </div>
+
               <div className="stat-title">Total Registered Users</div>
-              <div className="stat-value">totalUsers</div>
+
+              <div className="stat-value">
+                totalUsers <span className="text-pink-500">{users.length}</span>
+              </div>
             </div>
             <div className="stat shadow hover:bg-fuchsia-200 rounded-lg">
               <div className="stat-figure text-success">
