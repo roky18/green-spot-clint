@@ -24,7 +24,9 @@ This is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web applicati
 - **Others:**
   [
   ## --> "@tailwindcss/vite": "^4.1.17",
-  ## --> "axios": "^1.13.2",
+  ## --> "jspdf": "^3.0.3",
+  ## --> "jspdf-autotable": "^5.0.2",
+  ## --> "react-awesome-reveal": "^4.3.1",
   ## --> "firebase": "^12.5.0",
   ## --> "react": "^19.1.1",
   ## --> "react-dom": "^19.1.1",

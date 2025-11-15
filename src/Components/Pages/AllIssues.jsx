@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import Loading from "./Loading";
 
 const AllIssues = () => {
   const [issues, setIssues] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [filteredIssues, setFilteredIssues] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState("All");
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://green-spot-api-server.vercel.app/issues")
       .then((res) => res.json())
       .then((data) => {
         setIssues(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -29,6 +33,9 @@ const AllIssues = () => {
   }, [categoryFilter, issues]);
 
   const categories = ["All", ...new Set(issues.map((issue) => issue.category))];
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="max-w-[1400px] bg-base-200 mx-auto flex flex-col items-center my-6">
       <h2 className="font-bold mt-8 mb-10  text-indigo-500 text-4xl ">

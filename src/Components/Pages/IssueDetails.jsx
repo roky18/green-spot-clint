@@ -106,19 +106,22 @@ const IssueDetails = () => {
               </span>
             </p>
             <p>
-              <span className="font-semibold">Location:</span> {issue.location}
+              <span className="font-semibold ">Location:</span>{" "}
+              <span className="badge badge-outline font-semibold text-yellow-600">
+                {" "}
+                {issue.location}
+              </span>
             </p>
 
             <p>
-              <span className="font-semibold">Amount:</span>{" "}
+              <span className="font-semibold">Amount:</span>
               <span className="text-blue-500 badge badge-dash  font-semibold">
                 ${issue.amount}
               </span>
             </p>
             <div>
-              <span className="font-semibold">Date:</span>{" "}
+              <span className="font-semibold">Date:</span>
               <span className="badge badge-outline font-semibold text-green-600 ">
-                {" "}
                 {issue.date}
               </span>
             </div>
