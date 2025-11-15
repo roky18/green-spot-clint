@@ -26,11 +26,14 @@ const AddIssues = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/issues", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newIssue),
-      });
+      const res = await fetch(
+        "https://green-spot-api-server.vercel.app/issues",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newIssue),
+        }
+      );
       const data = await res.json();
       if (data.insertedId) {
         Swal.fire({

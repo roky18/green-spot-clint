@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const ContributionDetails = ({ issueId, refresh,user }) => {
+const ContributionDetails = ({ issueId, refresh, user }) => {
   const [contributors, setContributors] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/myContribution")
+    fetch("https://green-spot-api-server.vercel.app/myContribution")
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((c) => c.issueId === issueId);
@@ -22,28 +22,28 @@ const ContributionDetails = ({ issueId, refresh,user }) => {
       <div className="mt-8">
         <h2 className="text-2xl font-bold mb-4 text-center">Contributors</h2>
         <div className="overflow-x-auto">
-          <table className="table w-full border">
-            <thead>
+          <table className="table w-full text-center border">
+            <thead className="bg-blue-100">
               <tr>
+                <th>SL No</th>
                 <th>Image</th>
                 <th>Name</th>
                 <th>Contribution Amount</th>
               </tr>
             </thead>
-            <tbody>
-              {contributors.map((contributor) => (
+            <tbody className="bg-lime-200 font-semibold">
+              {contributors.map((contributor, index) => (
                 <tr key={contributor._id}>
+                  <td className="text-orange-500">{index + 1}</td>
                   <td>
                     <img
-                      src={
-                        user.photoURL
-                      }
+                      src={user.photoURL}
                       alt={contributor.name}
                       className="w-10 h-10 rounded-full"
                     />
                   </td>
-                  <td>{contributor.name}</td>
-                  <td>${contributor.amount}</td>
+                  <td className="text-secondary">{contributor.name}</td>
+                  <td className="text-primary">${contributor.amount}</td>
                 </tr>
               ))}
             </tbody>

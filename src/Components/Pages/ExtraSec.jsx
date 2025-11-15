@@ -10,7 +10,7 @@ const ExtraSec = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://green-spot-api-server.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);

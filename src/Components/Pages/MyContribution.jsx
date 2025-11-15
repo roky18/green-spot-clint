@@ -12,7 +12,9 @@ const MyContribution = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myContribution?email=${user.email}`)
+      fetch(
+        `https://green-spot-api-server.vercel.app/myContribution?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data);

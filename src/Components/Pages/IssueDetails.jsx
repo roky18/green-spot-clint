@@ -56,7 +56,7 @@ const IssueDetails = () => {
       additionalInfo: addInfo,
     };
 
-    fetch("http://localhost:3000/myContribution", {
+    fetch("https://green-spot-api-server.vercel.app/myContribution", {
       method: "POST",
       headers: {
         "content-type": "application/json",
