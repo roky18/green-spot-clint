@@ -1,7 +1,7 @@
 import React from "react";
 import garbage from "../../assets/garbage.jpg";
-import illegal from "../../assets/illegal const.jpg";
-import PPbroken from "../../assets/public-pro-brok.webp";
+import illegall from "../../assets/Illegal Construction.jpg";
+import PPbroken from "../../assets/Broken Public Property.jpg";
 import RoadDam from "../../assets/Road dame.jpg";
 import { Link } from "react-router";
 
@@ -12,7 +12,7 @@ const Category = () => {
         <span className="text-green-500">Cate</span>gory
       </h2>
       <section className=" w-11/12 grid lg:grid-cols-4 md:grid-cols-3 gap-6 text-center">
-        <div className=" rounded-xl bg-emerald-200 space-y-2 font-semibold p-4">
+        <div className="hover:scale-110 hover:bg-emerald-500 rounded-xl bg-emerald-200 space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={garbage} />
           <h3 className="text-indigo-500">Garbage</h3>
           <p className="text-xs text-gray-500">
@@ -26,8 +26,11 @@ const Category = () => {
           </Link>
         </div>
 
-        <div className=" bg-fuchsia-200 rounded-xl  space-y-2 font-semibold p-4">
-          <img className="w-full h-48 object-cover rounded-2xl" src={illegal} />
+        <div className=" hover:scale-110 hover:bg-fuchsia-400 bg-fuchsia-200 rounded-xl  space-y-2 font-semibold p-4">
+          <img
+            className="w-full h-48 object-cover rounded-2xl"
+            src={illegall}
+          />
           <h3 className="text-indigo-500">Illegal Construction</h3>
           <p className="text-xs text-gray-500">
             Buildings, extensions or modifications made without required
@@ -40,7 +43,7 @@ const Category = () => {
           </Link>
         </div>
 
-        <div className=" bg-lime-200 rounded-xl  space-y-2 font-semibold p-4">
+        <div className=" hover:scale-110 hover:bg-lime-500 bg-lime-200 rounded-xl  space-y-2 font-semibold p-4">
           <img
             className="w-full h-48 object-cover rounded-2xl"
             src={PPbroken}
@@ -57,7 +60,7 @@ const Category = () => {
             </button>
           </Link>
         </div>
-        <div className=" bg-rose-200 rounded-xl  space-y-2 font-semibold p-4">
+        <div className=" hover:scale-110 hover:bg-rose-400 bg-rose-200 rounded-xl  space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={RoadDam} />
           <h3 className="text-indigo-500">Road Damage</h3>
           <p className="text-xs text-gray-500">

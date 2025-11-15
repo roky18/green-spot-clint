@@ -71,7 +71,7 @@ const RecentComplaints = () => {
           <AiOutlineWarning />
         </h3>
       </Marquee>
-      <div className="w-11/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {complains.map((complain) => (
           <div
             key={complain._id}
@@ -92,12 +92,12 @@ const RecentComplaints = () => {
               <p>{complain.location}</p>
 
               <div className="grid grid-cols-2 gap-15 ">
-                <div className="badge badge-soft badge-secondary">
+                <div className="badge font-semibold badge-soft badge-secondary">
                   ${complain.amount}
                 </div>
                 <div className="card-actions">
                   <Link to={`/issueDetails/${complain._id}`}>
-                    <button className="btn btn-dash btn-secondary btn-xs">
+                    <button className="btn text-center btn-dash btn-secondary btn-xs">
                       See Details
                     </button>
                   </Link>

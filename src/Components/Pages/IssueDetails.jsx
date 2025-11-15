@@ -1,13 +1,15 @@
-import { use, useRef } from "react";
+import { use, useRef, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Contex/AuthContex";
 import Swal from "sweetalert2";
+import ContributionDetails from "./ContributionDetails";
 
 const IssueDetails = () => {
   const today = new Date().toISOString();
   const issue = useLoaderData();
   const bidModalRef = useRef(null);
   const { user } = use(AuthContext);
+  const [refresh, setRefresh] = useState(false);
   // console.log(issue);
   // console.log(user);
 
@@ -72,6 +74,7 @@ const IssueDetails = () => {
             showConfirmButton: false,
             timer: 2000,
           });
+          setRefresh((r) => !r);
         }
       });
   };
@@ -261,6 +264,11 @@ const IssueDetails = () => {
           </div>
         </div>
       </div>
+      <ContributionDetails
+        issueId={issue._id}
+        refresh={refresh}
+        user={user}
+      ></ContributionDetails>
     </div>
   );
 };
