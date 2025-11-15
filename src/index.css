@@ -13,15 +13,4 @@ a.active {
   font-semibold;
 }
 
-/* @plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-} */
-body.dark {
-  background-color: #1f2937; /* gray-800 */
-  color: #f9fafb; /* gray-50 */
-}
 
-body.dark a.active {
-  @apply bg-blue-700 text-white font-semibold;
-}
