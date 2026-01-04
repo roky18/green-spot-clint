@@ -97,11 +97,9 @@ const Login = () => {
       <div className="hero  min-h-screen">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl text-fuchsia-500 font-bold">
-              Login Your Account
-            </h1>
+            <h1 className="text-3xl font-bold">Login Your Account</h1>
           </div>
-          <div className="card bg-green-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-cyan-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleLogin}>
               <div className="card-body">
                 <fieldset className="fieldset">
@@ -151,7 +149,7 @@ const Login = () => {
 
                   <button
                     onClick={handleGoogleSignIn}
-                    className="btn mt-5 hover:bg-amber-200 bg-white text-black border-[#e5e5e5]"
+                    className="btn mt-5 hover:bg-cyan-500 bg-white text-black border-[#e5e5e5]"
                   >
                     <svg
                       aria-label="Google logo"
@@ -184,7 +182,10 @@ const Login = () => {
                   </button>
                   <p className="flex justify-center pt-3">
                     Dont't Have An Account ?
-                    <Link to="/register" className="text-red-500 font-semibold">
+                    <Link
+                      to="/register"
+                      className="text-blue-500 font-semibold"
+                    >
                       Register
                     </Link>
                   </p>

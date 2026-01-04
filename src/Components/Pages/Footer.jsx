@@ -7,16 +7,18 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-horizontal footer-center bg-gradient-to-r from-[#3700ffbb] to-[#00d40ec2] text-gray-200  p-10">
+      <footer className="footer footer-horizontal footer-center bg-black text-gray-200  p-10">
         <aside>
-          <img className="w-10 rounded-xl" src={icon} alt="" />
+          <Link to="/">
+            <img className="w-10 rounded-xl" src={icon} alt="" />
+          </Link>
           <p>
             At Green Spot, we believe in green thinking, a clean environment,
             and transparency in action. Join us as we build a healthier, greener
             future—together.
           </p>
           <p className="font-bold">
-            <span className="text-indigo-600">GREEN SPOT</span> Industries Ltd.
+            <span className="text-cyan-500">GREEN SPOT</span> Industries Ltd.
             <br />
             ROKY tech since 1992
           </p>
@@ -50,7 +52,7 @@ const Footer = () => {
               About us
             </a>
             <a
-              href="https://github.com/roky18"
+              href="https://www.linkedin.com/in/roky18/"
               target="_blank"
               className="link link-hover"
             >

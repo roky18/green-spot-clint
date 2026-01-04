@@ -20,11 +20,9 @@ const RecentComplaints = () => {
   }, []);
 
   return (
-    <div className="max-w-[1400px] bg-orange-50  mx-auto flex flex-col items-center my-6">
-      <h2 className="font-bold mt-10  text-indigo-500 text-4xl ">
-        <span className="text-green-500">Recent</span> Complaints
-      </h2>
-      <Marquee className="bg-amber-100 mt-5 mb-6">
+    <div className="max-w-[1400px] bg-gray-100 mx-auto flex flex-col items-center my-6">
+      <h2 className="font-bold mt-10 text-4xl ">Recent Complaints</h2>
+      <Marquee className=" mt-5 mb-6">
         <h3 className="text-2xl text-red-500 p-3 font-bold flex justify-center items-center text-center">
           <AiOutlineWarning />
           <AiOutlineWarning />
@@ -73,31 +71,28 @@ const RecentComplaints = () => {
       </Marquee>
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {complains.map((complain) => (
-          <div
-            key={complain._id}
-            className=" bg-green-200 shadow-2xl rounded-4xl"
-          >
-            <figure className="px-8 pt-10">
+          <div key={complain._id} className="shadow-xl rounded-xl">
+            <figure>
               <img
                 src={complain.image}
-                className="rounded-xl w-full h-48 object-cover"
+                className="rounded-t-xl w-full h-48 object-cover"
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-red-600">{complain.title}</h2>
+              <h2 className="card-title">{complain.title}</h2>
 
-              <div className="badge badge-soft badge-success font-bold text-primary badge-outline">
+              <div className="badge mb-6 badge-soft badge-outline">
                 {complain.category}
               </div>
               <p>{complain.location}</p>
 
-              <div className="grid grid-cols-2 gap-15 ">
-                <div className="badge font-semibold badge-soft badge-secondary">
+              <div className="grid mt-6 grid-cols-2 gap-15 ">
+                <div className="badge font-semibold badge-soft text-red-500">
                   ${complain.amount}
                 </div>
                 <div className="card-actions">
                   <Link to={`/issueDetails/${complain._id}`}>
-                    <button className="btn text-center btn-dash btn-secondary btn-xs">
+                    <button className="btn text-center btn-info btn-xs">
                       See Details
                     </button>
                   </Link>
@@ -108,7 +103,7 @@ const RecentComplaints = () => {
         ))}
       </div>
       <Link to="/allIssues">
-        <button className="btn mt-12 mb-16 btn-soft btn-secondary">
+        <button className="btn mt-12 mb-16 btn-dash btn-info">
           All Issues
         </button>
       </Link>

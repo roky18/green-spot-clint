@@ -22,12 +22,11 @@ const ContributionDetails = ({ issueId, refresh, user }) => {
   return (
     <div className="max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg">
       <div className="mt-8">
-        <h2 className="font-bold mt-10  text-indigo-500 text-4xl text-center mb-10">
-          <span className="text-green-500">Contributors</span> <span>For</span>{" "}
-          <span className="text-red-500">This Issue</span>
+        <h2 className="font-bold mt-10 text-4xl text-center mb-10">
+          Contributors For This Issue
         </h2>
         <div className="overflow-x-auto">
-          <table className="table w-full text-center border">
+          <table className="table table-zebra bg-gray-100 w-full text-center ">
             <thead className="bg-blue-100">
               <tr>
                 <th>SL No</th>
@@ -36,10 +35,10 @@ const ContributionDetails = ({ issueId, refresh, user }) => {
                 <th>Contribution Amount</th>
               </tr>
             </thead>
-            <tbody className="bg-lime-200 font-semibold">
+            <tbody className="font-semibold">
               {contributors.map((contributor, index) => (
                 <tr key={contributor._id}>
-                  <td className="text-orange-500">{index + 1}</td>
+                  <td>{index + 1}</td>
                   <td>
                     <img
                       src={user.photoURL}
@@ -47,8 +46,8 @@ const ContributionDetails = ({ issueId, refresh, user }) => {
                       className="w-10 h-10 rounded-full"
                     />
                   </td>
-                  <td className="text-secondary">{contributor.name}</td>
-                  <td className="text-primary">${contributor.amount}</td>
+                  <td>{contributor.name}</td>
+                  <td className="text-green-600">${contributor.amount}</td>
                 </tr>
               ))}
             </tbody>

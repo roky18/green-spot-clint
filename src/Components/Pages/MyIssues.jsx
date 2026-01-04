@@ -77,35 +77,36 @@ const MyIssues = () => {
   };
 
   return (
-    <div className="p-4 max-w-11/12 bg-violet-100 rounded-2xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center">
-        My <span className="text-green-500">Issues</span>
-      </h2>
+    <div className="p-4 max-w-11/12 rounded-xl mx-auto">
+      <h2 className="text-3xl font-bold mb-6 text-center">My Issues</h2>
 
-      <div className="overflow-x-auto">
+      <div className="min-h-screen overflow-x-auto">
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-gray-200 text-gray-700">
-              <th className="border text-orange-500 px-4 py-2">SL</th>
-              <th className="border text-orange-500 px-4 py-2">Title</th>
-              <th className="border  text-orange-500 px-4 py-2">Category</th>
-              <th className="border text-orange-500 px-4 py-2">Amount</th>
-              <th className="border text-orange-500 px-4 py-2">Status</th>
-              <th className="border text-orange-500 px-4 py-2">Actions</th>
+            <tr className="bg-gray-200  text-gray-600">
+              <th>SL</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {issues.length > 0 ? (
               issues.map((issue, index) => (
-                <tr key={issue._id} className="hover:bg-yellow-300 border">
+                <tr key={issue._id}>
                   <td className=" px-4 py-2">{index + 1}</td>
-                  <td className=" text-secondary px-4 py-2">{issue.title}</td>
-                  <td className="text-primary px-4 py-2">{issue.category}</td>
+                  <td className="px-4 py-2">{issue.title}</td>
+                  <td className="px-4 text-cyan-700 py-2">{issue.category}</td>
                   <td className=" text-red-500 font-semibold px-4 py-2">
                     ${issue.amount}
                   </td>
                   <td className=" px-4 py-2">{issue.status}</td>
-                  <td className=" px-4 py-2 flex justify-evenly ">
+                  <td
+                    className=" px-4 py-2 flex flex-col md:flex-row
+                   md:gap-2 justify-evenly "
+                  >
                     <button
                       onClick={() => handleEdit(issue)}
                       className="btn btn-sm btn-accent flex items-center gap-1"

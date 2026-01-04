@@ -54,8 +54,8 @@ const AddIssues = () => {
 
   return (
     <div className="max-w-11/12 md:max-w-5/12 lg:max-w-6/12 mx-auto p-6 bg-white rounded-lg shadow-lg my-8">
-      <h2 className="text-3xl font-bold text-center mb-6 text-primary">
-        Report a <span className="text-green-500">New Issue</span>
+      <h2 className="text-3xl font-bold text-center mb-6">
+        Report a New Issue
       </h2>
       <form id="issueForm" onSubmit={handleSubmit} className="space-y-4">
         {/* Issue Title */}
@@ -82,23 +82,24 @@ const AddIssues = () => {
             <option value="" disabled>
               Select Category
             </option>
-            <option className="font-semibold text-violet-500" value="Garbage">
+            <option className="font-semibold text-cyan-500
+            " value="Garbage">
               Garbage
             </option>
             <option
-              className="font-semibold text-violet-500"
+              className="font-semibold text-cyan-500"
               value="Road Damage"
             >
               Road Damage
             </option>
             <option
-              className="font-semibold text-violet-500"
+              className="font-semibold text-cyan-500"
               value="Illegal Construction"
             >
               Illegal Construction
             </option>
             <option
-              className="font-semibold text-violet-500"
+              className="font-semibold text-cyan-500"
               value="Broken Public Property"
             >
               Broken Public Property

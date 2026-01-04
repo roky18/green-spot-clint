@@ -15,7 +15,7 @@ const Error = () => {
       </p>
       <a
         href="/"
-        className="bg-blue-600 hover:bg-pink-500 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300"
+        className="bg-blue-600 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300"
       >
         Go to Homepage
       </a>

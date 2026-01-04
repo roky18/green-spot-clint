@@ -55,13 +55,11 @@ const MyContribution = () => {
   };
 
   return (
-    <div className="overflow-x-auto w-full px-4 sm:px-6 bg-gray-100 my-8 p-6 max-w-11/12 mx-auto rounded-4xl lg:px-8 mt-8">
-      <h2 className="text-3xl text-center font-bold text-primary mb-4">
-        <span className="text-green-500">My</span> Contributions
-      </h2>
-      <table className="table table-zebra w-full">
+    <div className="overflow-x-auto mt-10 w-full px-4 min-h-screen sm:px-6 my-8 p-6 max-w-11/12 mx-auto rounded-xl lg:px-8">
+      <h2 className="text-3xl text-center font-bold  mb-4">My Contributions</h2>
+      <table className="table text-center table-zebra w-full">
         <thead>
-          <tr className="text-orange-500">
+          <tr className="text-gray-500">
             <th>SL</th>
             <th>Issue Title</th>
             <th>Category</th>
@@ -74,12 +72,10 @@ const MyContribution = () => {
           {contribution && contribution.length > 0 ? (
             contribution.map((item, index) => (
               <tr key={item._id}>
-                <td className="font-medium text-yellow-600">{index + 1}</td>
+                <td className="font-medium ">{index + 1}</td>
                 <td className="font-medium">{item.title}</td>
-                <td className="text-violet-500 font-semibold">
-                  {item.category}
-                </td>
-                <td className="text-blue-500 font-semibold">${item.amount}</td>
+                <td className="text-cyan-700 font-semibold">{item.category}</td>
+                <td className="text-green-500 font-semibold">${item.amount}</td>
                 <td>{item.date}</td>
                 <td>
                   <button

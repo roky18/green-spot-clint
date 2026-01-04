@@ -35,6 +35,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);
@@ -88,11 +89,9 @@ const Register = () => {
       <div className="hero  min-h-screen">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl text-teal-500 font-bold">
-              Register your account
-            </h1>
+            <h1 className="text-3xl font-bold">Register your account</h1>
           </div>
-          <div className="card bg-fuchsia-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-cyan-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleRegister}>
               <div className="card-body">
                 <fieldset className="fieldset">
@@ -141,13 +140,13 @@ const Register = () => {
 
                   <button
                     type="submit"
-                    className="btn bg-[#622069] text-white border-[#591660] mt-4"
+                    className="btn bg-blue-600 text-white mt-4"
                   >
                     Register
                   </button>
                   <button
                     onClick={handleGoogleSignIn}
-                    className="btn mt-4 hover:bg-pink-300 bg-white text-black border-[#e5e5e5]"
+                    className="btn mt-4 hover:bg-cyan-300 bg-white text-black border-[#e5e5e5]"
                   >
                     <svg
                       aria-label="Google logo"
@@ -180,7 +179,7 @@ const Register = () => {
                   </button>
                   <p className="flex justify-center pt-3">
                     Already Have An Account ?
-                    <Link to="/login" className="text-green-500 font-semibold">
+                    <Link to="/login" className="text-blue-500 font-semibold">
                       Please Login
                     </Link>
                   </p>

@@ -3,6 +3,8 @@ import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Contex/AuthContex";
 import Swal from "sweetalert2";
 import ContributionDetails from "./ContributionDetails";
+import { MdCategory, MdDateRange, MdLocationPin } from "react-icons/md";
+import { BsCashCoin } from "react-icons/bs";
 
 const IssueDetails = () => {
   const today = new Date().toISOString();
@@ -29,19 +31,6 @@ const IssueDetails = () => {
     const address = e.target.address.value;
     const date = e.target.date.value;
     const addInfo = e.target.additionalInfo.value;
-
-    // console.log(
-    //   issueId,
-    //   title,
-    //   name,
-    //   email,
-    //   amount,
-    //   phone,
-    //   address,
-    //   date,
-    //   addInfo,
-    //   category
-    // );
 
     const newDonet = {
       issueId: issueId,
@@ -81,7 +70,7 @@ const IssueDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg">
-      <div className="max-w-11/12 bg-pink-100 mx-auto p-6 rounded-lg grid grid-rows-1 md:grid-cols-12 gap-4 shadow-lg">
+      <div className="max-w-11/12 bg-gray-100 mx-auto p-6 rounded-lg grid grid-rows-1 md:grid-cols-12 gap-4 shadow-lg">
         <div className=" p-4 left col-span-5 ">
           <div className="mb-6">
             <img
@@ -89,50 +78,43 @@ const IssueDetails = () => {
               className="w-full h-64 object-cover rounded-lg"
             />
           </div>
-          <div className="bg-green-50 p-4 rounded-2xl">
+          <div className="bg-white p-4 rounded-2xl">
             <h1 className="font-bold mb-3 text-2xl">Issue Description</h1>
             <p className="mb-4 text-sm text-gray-500">{issue.description}</p>
           </div>
         </div>
         <div className=" py-4 right col-span-6">
-          <h1 className="text-3xl font-bold mb-4 text-primary">
-            {issue.title}
-          </h1>
+          <h1 className="text-3xl font-bold mb-4">{issue.title}</h1>
           <div className="space-y-5 mb-6">
-            <p>
-              <span className="font-semibold">Category:</span>{" "}
-              <span className="badge badge-dash text-red-500">
-                {issue.category}
-              </span>
+            <p className="flex gap-2 items-center font-semibold">
+              <MdCategory />
+              <span className="badge badge-dash">{issue.category}</span>
             </p>
-            <p>
-              <span className="font-semibold ">Location:</span>{" "}
-              <span className="badge badge-outline font-semibold text-yellow-600">
-                {" "}
+            <p className="flex gap-2 items-center font-semibold">
+              <MdLocationPin />
+              <span className="badge badge-outline font-semibold ">
                 {issue.location}
               </span>
             </p>
 
-            <p>
-              <span className="font-semibold">Amount:</span>
-              <span className="text-blue-500 badge badge-dash  font-semibold">
+            <p className="flex gap-2 items-center font-semibold">
+              <BsCashCoin />
+              <span className=" text-red-500 badge badge-dash  font-semibold">
                 ${issue.amount}
               </span>
             </p>
-            <div>
-              <span className="font-semibold">Date:</span>
-              <span className="badge badge-outline font-semibold text-green-600 ">
-                {issue.date}
-              </span>
+            <div className="flex items-center font-semibold">
+              <MdDateRange />
+              :- {issue.date}
             </div>
             <button
               onClick={handleModalOpen}
-              className="btn btn-accent text-white bg-secondary hover:bg-secondary-focus px-6 py-2 w-full mt-13 rounded-lg"
+              className="btn btn-accent text-white  px-6 py-2 w-full mt-13 rounded-lg"
             >
               Pay Clean-Up Contribution
             </button>
             <Link className="flex mt-9 justify-center" to="/allIssues">
-              <button className="btn btn-soft btn-secondary ">
+              <button className="btn btn-dash btn-info ">
                 Back to All Issues
               </button>
             </Link>
@@ -243,7 +225,7 @@ const IssueDetails = () => {
                   <div>
                     <label className="label">
                       <span className="label-text">
-                        Additional Info (optional)
+                        Additional Info 
                       </span>
                     </label>
                     <textarea
@@ -252,7 +234,7 @@ const IssueDetails = () => {
                       placeholder="Any extra info..."
                     />
                   </div>
-                  <button className="btn btn-secondary mt-4 w-full text-xl">
+                  <button className="btn text-black btn-accent mt-4 w-full text-xl">
                     Submit
                   </button>
                 </form>

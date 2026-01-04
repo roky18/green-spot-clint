@@ -8,7 +8,8 @@ const AllIssues = () => {
 
   const [filteredIssues, setFilteredIssues] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState("All");
-
+  const [searchText, setSearchText] = useState("");
+  const [sortOption, setSortOption] = useState("");
   useEffect(() => {
     setLoading(true);
     fetch("https://green-spot-api-server.vercel.app/issues")
@@ -23,14 +24,37 @@ const AllIssues = () => {
   }, []);
 
   useEffect(() => {
-    if (categoryFilter === "All") {
-      setFilteredIssues(issues);
-    } else {
-      setFilteredIssues(
-        issues.filter((issue) => issue.category === categoryFilter)
+    let updatedIssues = [...issues];
+
+    if (categoryFilter !== "All") {
+      updatedIssues = updatedIssues.filter(
+        (issue) => issue.category === categoryFilter
       );
     }
-  }, [categoryFilter, issues]);
+
+    if (searchText.trim() !== "") {
+      updatedIssues = updatedIssues.filter((issue) =>
+        issue.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
+
+    // Sort
+    if (sortOption === "latest") {
+      updatedIssues.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+    }
+
+    if (sortOption === "low") {
+      updatedIssues.sort((a, b) => a.amount - b.amount);
+    }
+
+    if (sortOption === "high") {
+      updatedIssues.sort((a, b) => b.amount - a.amount);
+    }
+
+    setFilteredIssues(updatedIssues);
+  }, [issues, categoryFilter, searchText, sortOption]);
 
   const categories = ["All", ...new Set(issues.map((issue) => issue.category))];
   if (loading) {
@@ -38,15 +62,24 @@ const AllIssues = () => {
   }
   return (
     <div className="max-w-[1400px] bg-base-200 mx-auto flex flex-col items-center my-6">
-      <h2 className="font-bold mt-8 mb-10  text-indigo-500 text-4xl ">
+      <h2 className="font-bold mt-8 mb-10 text-4xl ">
         All Issues : {filteredIssues.length}
       </h2>
+      {/* ------- */}
+      <div className="flex md:gap-35 flex-col md:flex-row gap-4 mb-8">
+        {/* Search---> */}
+        <input
+          type="text"
+          placeholder="Search by title..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          className="input input-bordered w-full md:w-72"
+        />
 
-      <div className="flex gap-4 mb-8">
         <select
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
-          className="select text-blue-500 font-semibold bg-red-100 select-bordered"
+          className="select font-semibold select-bordered"
         >
           {categories.map((cat) => (
             <option key={cat} value={cat}>
@@ -54,31 +87,45 @@ const AllIssues = () => {
             </option>
           ))}
         </select>
+
+        {/*Sort */}
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          className="select select-bordered font-semibold"
+        >
+          <option value="">Sort By</option>
+          <option value="latest">Latest</option>
+          <option value="low">Amount Low to High</option>
+          <option value="high">Amount High to Low</option>
+        </select>
       </div>
+      {/* ----------------- */}
+
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredIssues.map((issue) => (
-          <div key={issue._id} className=" bg-green-100 shadow-2xl rounded-4xl">
-            <figure className="px-8 pt-10">
+          <div key={issue._id} className=" bg-cyan-100 shadow-md rounded-xl">
+            <figure className="px-6 pt-6">
               <img
                 src={issue.image}
                 className="rounded-xl w-full h-48 object-cover"
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-red-600">{issue.title}</h2>
+              <h2 className="card-title">{issue.title}</h2>
 
-              <div className="badge badge-soft badge-success font-bold text-primary badge-outline">
+              <div className="badge mb-6 badge-soft badge-outline">
                 {issue.category}
               </div>
               <p>{issue.location}</p>
 
-              <div className="grid grid-cols-2 gap-15 ">
-                <div className="badge font-semibold badge-soft badge-secondary">
+              <div className="grid mt-6 grid-cols-2 gap-15 ">
+                <div className="badge font-semibold badge-soft text-red-500">
                   ${issue.amount}
                 </div>
                 <div className="card-actions">
                   <Link to={`/issueDetails/${issue._id}`}>
-                    <button className="btn btn-dash btn-secondary text-center btn-xs">
+                    <button className="btn btn-info text-center btn-xs">
                       See Details
                     </button>
                   </Link>
@@ -89,7 +136,7 @@ const AllIssues = () => {
         ))}
       </div>
       <Link to="/">
-        <button className="btn mt-12 mb-16 btn-soft btn-secondary ">
+        <button className="btn mt-12 mb-16 btn-soft btn-accent ">
           Back to Home
         </button>
       </Link>

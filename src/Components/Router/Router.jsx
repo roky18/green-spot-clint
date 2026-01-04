@@ -10,6 +10,8 @@ import MyIssues from "../Pages/MyIssues";
 import MyContribution from "../Pages/MyContribution";
 import IssueDetails from "../Pages/IssueDetails";
 import PrivateRoute from "./PrivateRoute";
+import DHome from "../Pages/DHome";
+import DashLayout from "../Layout/DashLayout";
 
 const router = createBrowserRouter([
   {
@@ -33,42 +35,44 @@ const router = createBrowserRouter([
         element: <AllIssues></AllIssues>,
       },
       {
-        path: "/addIssues",
-        element: (
-          <PrivateRoute>
-            <AddIssues></AddIssues>
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/issueDetails/:id",
         loader: ({ params }) =>
           fetch(`https://green-spot-api-server.vercel.app/issues/${params.id}`),
-        element: (
-          <PrivateRoute>
-            <IssueDetails></IssueDetails>,
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/myIssues",
-        element: (
-          <PrivateRoute>
-            <MyIssues></MyIssues>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/myContribution",
-        element: (
-          <PrivateRoute>
-            <MyContribution></MyContribution>
-          </PrivateRoute>
-        ),
+        element: <IssueDetails></IssueDetails>,
       },
       {
         path: "*",
         element: <Error></Error>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashLayout></DashLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        Component: DHome,
+      },
+      {
+        path: "myIssues",
+        element: <MyIssues></MyIssues>,
+      },
+      {
+        path: "addIssues",
+        element: <AddIssues></AddIssues>,
+      },
+      {
+        path: "myContribution",
+        element: <MyContribution></MyContribution>,
+      },
+      {
+        path: "*",
+        Component: Error,
       },
     ],
   },
