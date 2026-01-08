@@ -36,15 +36,11 @@ const Navbar = () => {
             <li>
               <NavLink to="/allIssues">All Issues</NavLink>
             </li>
+
             <li>
-              <NavLink to="/addIssues">Add Issues</NavLink>
+              <NavLink to="/dashboard/myIssues">My Issues</NavLink>
             </li>
-            <li>
-              <NavLink to="/myIssues">My Issues</NavLink>
-            </li>
-            <li>
-              <NavLink to="/myContribution">My Contribution</NavLink>
-            </li>
+            
           </div>
         ) : (
           <div className="flex text-xl">

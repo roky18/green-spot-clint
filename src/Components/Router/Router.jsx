@@ -12,6 +12,7 @@ import IssueDetails from "../Pages/IssueDetails";
 import PrivateRoute from "./PrivateRoute";
 import DHome from "../Pages/DHome";
 import DashLayout from "../Layout/DashLayout";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "myContribution",
         element: <MyContribution></MyContribution>,
+      },
+      {
+        path: "profile/:email",
+        element: <Profile></Profile>,
       },
       {
         path: "*",
