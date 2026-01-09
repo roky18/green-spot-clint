@@ -1,46 +1,53 @@
-# React + Vite
+🌿 Green Spot — Community Cleanliness & Issue Reporting Portal
+🔗 Live Site: https://green-spot-5c3f7.web.app/
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📖 Project Overview
+Green Spot is a full-stack web platform where users can report, track, and manage cleanliness, infrastructure, and public-space related issues in their local community. The portal empowers citizens to highlight problems like garbage, illegal construction, road damage, and broken public property — enabling faster resolution and stronger civic participation.
 
-Currently, two official plugins are available:
+Users can submit new issue reports, view community complaints, filter by category, check status updates, and contribute to keeping their neighborhoods clean and safe.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Key Features
+🔐 Secure user authentication using Firebase Auth
+📝 Submit, view, and search local community issues
+🚮 Categorize reports (Garbage, Illegal Construction, Road Damage, Broken Property)
+🌍 View recent reports on the dashboard with details & estimated costs
+📊 User contribution history showing past reports & amounts
+🌙 Day/Night theme toggle for comfortable viewing
+📄 Downloadable reports (PDF) for tracking or sharing
+🛠 Volunteer & clean-drive section to encourage community action
+📱 Fully responsive UI with modern design
 
-# Community Cleanliness & Issue Reporting Portal
+🛠️ Technologies Used
 
-Live Site:
+Frontend
 
-## 🔍 Project Overview
+React.js + Vite
 
-This is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application where users can report, track and manage cleanliness & public-space related issues in their local area. The portal allows users to request clean-up drives, make small community-contributions, and view their personal history of reported issues.
+React Router DOM
 
-## 🛠 Tech Stack
+Tailwind CSS & DaisyUI
 
-- **Frontend:** React.js, React Router, Tailwind CSS, daisyUI, React Icons
-- **Backend:** Node.js, Express.js, MongoDB
-- **Authentication:** Firebase Auth
-- **Hosting:** Client – Firebase Hosting; Server – Vercel
-- **Others:**
-  [
-  ## --> "@tailwindcss/vite": "^4.1.17",
-  ## --> "jspdf": "^3.0.3",
-  ## --> "jspdf-autotable": "^5.0.2",
-  ## --> "react-awesome-reveal": "^4.3.1",
-  ## --> "firebase": "^12.5.0",
-  ## --> "react": "^19.1.1",
-  ## --> "react-dom": "^19.1.1",
-  ## --> "react-fast-marquee": "^1.6.5",
-  ## --> "react-icons": "^5.5.0",
-  ## --> "react-router": "^7.9.5",
-  ## --> "sweetalert2": "^11.26.3",
-  ## --> "tailwindcss": "^4.1.17"
-  ]
+Firebase Authentication
 
-## React Compiler
+Axios
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SweetAlert2
 
-## Expanding the ESLint configuration
+React Icons, React Fast Marquee, React Awesome Reveal
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+jsPDF & jsPDF-AutoTable
+
+Backend
+
+Firebase (Firestore or Realtime DB) / optional Node.js + Express backend
+
+Authentication: Firebase Auth
+
+Hosting: Firebase Hosting
+
+👤 Author
+MD RAKIBUL ISLAM ROKY
+Email: roky18bd@gmail.com
+LinkedIn LinkedIn: https://linkedin.com/in/roky18
+📞 Mobile: +8801727020930

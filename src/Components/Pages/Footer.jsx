@@ -25,7 +25,7 @@ const Footer = () => {
           <nav>
             <div className="grid grid-flow-col gap-4">
               <span>
-                <a href="https://x.com/" target="_blank">
+                <a href="https://linkedin.com/in/roky18" target="_blank">
                   <FaXTwitter size={25} />
                 </a>
               </span>
@@ -35,7 +35,9 @@ const Footer = () => {
                 </a>
               </span>
               <span>
-                <a href="https://facebook.com" target="_blank">
+                <a href="https://facebook.com/rokymax626
+
+" target="_blank">
                   <FaSquareFacebook size={25} />
                 </a>
               </span>
