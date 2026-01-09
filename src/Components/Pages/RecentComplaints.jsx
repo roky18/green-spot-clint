@@ -71,7 +71,10 @@ const RecentComplaints = () => {
       </Marquee>
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {complains.map((complain) => (
-          <div key={complain._id} className=" dark:bg-gray-300 dark:text-black shadow-xl rounded-xl">
+          <div
+            key={complain._id}
+            className=" dark:bg-gray-300 dark:text-black shadow-xl rounded-xl"
+          >
             <figure>
               <img
                 src={complain.image}
@@ -81,7 +84,7 @@ const RecentComplaints = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">{complain.title}</h2>
 
-              <div className="badge mb-6 badge-soft badge-outline">
+              <div className="badge mb-6 dark:badge-info badge-soft badge-outline">
                 {complain.category}
               </div>
               <p>{complain.location}</p>

@@ -16,7 +16,7 @@ const Banner = () => {
       >
         <div>
           <div
-            className="hero h-[70vh]"
+            className="hero md:h-[70vh]"
             style={{
               backgroundImage: `url(${Gcity2})`,
             }}
@@ -44,7 +44,7 @@ const Banner = () => {
         </div>
         <div>
           <div
-            className="hero h-[70vh]"
+            className="hero md:h-[70vh]"
             style={{
               backgroundImage: `url(${Gcity1})`,
             }}
@@ -57,15 +57,14 @@ const Banner = () => {
                 </h1>
                 <p className="mb-5">
                   Students play an important role in keeping their surroundings
-                  clean and healthy. Many schools and universities organise
-                  regular cleanliness drives where students voluntarily clean
+                  clean and healthy. Many schools and
+                  regular cleanliness students voluntarily clean
                   their campuses, sweep classrooms, pick up litter, and manage
                   waste properly to make the environment more pleasant and safe.
                   These activities not only help maintain a neat and tidy space,
                   but also teach students responsibility, teamwork, and respect
                   for the environment — values that will stay with them
-                  throughout life. Such student led cleaning efforts inspire
-                  others to contribute to a cleaner, greener community.
+                  throughout life. 
                 </p>
                 <Link to="/allIssues" className="btn btn-info">
                   ALL Issues
@@ -76,7 +75,7 @@ const Banner = () => {
         </div>
         <div>
           <div
-            className="hero h-[70vh]"
+            className="hero md:h-[70vh]"
             style={{
               backgroundImage: `url(${Gcity3})`,
             }}

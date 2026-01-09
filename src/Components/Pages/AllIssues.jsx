@@ -73,13 +73,13 @@ const AllIssues = () => {
           placeholder="Search by title..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          className="input input-bordered w-full md:w-72"
+          className="input input-bordered dark:bg-gray-600 dark:text-white w-full md:w-72"
         />
 
         <select
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
-          className="select font-semibold select-bordered"
+          className="select dark:bg-gray-600 dark:text-white font-semibold select-bordered"
         >
           {categories.map((cat) => (
             <option key={cat} value={cat}>
@@ -92,7 +92,7 @@ const AllIssues = () => {
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="select select-bordered font-semibold"
+          className="select dark:bg-gray-600 dark:text-white select-bordered font-semibold"
         >
           <option value="">Sort By</option>
           <option value="latest">Latest</option>
@@ -114,7 +114,7 @@ const AllIssues = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">{issue.title}</h2>
 
-              <div className="badge mb-6 badge-soft badge-outline">
+              <div className="badge mb-6 dark:badge-info badge-soft badge-outline">
                 {issue.category}
               </div>
               <p>{issue.location}</p>

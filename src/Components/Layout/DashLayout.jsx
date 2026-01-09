@@ -38,19 +38,21 @@ const DashLayout = () => {
               <path d="M14 10l2 2l-2 2"></path>
             </svg>
           </label>
-          <div className="px-4 font-semibold text-green-500">
-            Green Spot Dashboard
+          <div className="flex ">
+            <div className="px-4 font-semibold text-cyan-500">
+              Green Spot Dashboard
+            </div>
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-lg mr-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
+            >
+              {theme === "dark" ? (
+                <FaSun className="w-2 h-2" />
+              ) : (
+                <FaMoon className="w-2 h-2" />
+              )}
+            </button>
           </div>
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="text-lg mr-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
-          >
-            {theme === "dark" ? (
-              <FaSun className="w-2 h-2" />
-            ) : (
-              <FaMoon className="w-2 h-2" />
-            )}
-          </button>
         </nav>
         {/* Page content here */}
         <Outlet></Outlet>

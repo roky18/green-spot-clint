@@ -22,7 +22,7 @@ const ExtraSec = () => {
   return (
     <div className="py-12 w-11/12 mx-auto dark:bg-black dark:text-black bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 bg-base-100 p-12 rounded-xl text-center">
+        <div className="mb-12 dark:bg-gray-400 bg-base-100 p-12 rounded-xl text-center">
           <h2 className="text-3xl font-bold mb-4">
             Community Stats 
           </h2><hr className="mb-5" />
@@ -35,22 +35,22 @@ const ExtraSec = () => {
               <div className="stat-title">Total Registered Users</div>
 
               <div className="stat-value">
-                totalUsers <span className="text-pink-500">{users.length}</span>
+                TotalUsers <span className="text-pink-500">{users.length}</span>
               </div>
             </div>
             <div className="stat shadow hover:bg-cyan-200 bg-gray-100 rounded-lg">
               <div className="stat-figure text-success">
-                <FaCheckCircle size={40} />
+                <FaCheckCircle className="w-8 h-8" size={40} />
               </div>
               <div className="stat-title">Issues Resolved</div>
-              <div className="stat-value">issuesResolved</div>
+              <div className="stat-value ">Resolved</div>
             </div>
             <div className="stat shadow hover:bg-cyan-200 bg-gray-100 rounded-lg">
               <div className="stat-figure text-warning">
                 <FaHourglassHalf size={40} />
               </div>
               <div className="stat-title">Issues Pending</div>
-              <div className="stat-value">issuesPending</div>
+              <div className="stat-value">Pending</div>
             </div>
           </div>
         </div>
