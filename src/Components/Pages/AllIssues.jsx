@@ -61,8 +61,8 @@ const AllIssues = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="max-w-[1400px] bg-base-200 mx-auto flex flex-col items-center my-6">
-      <h2 className="font-bold mt-8 mb-10 text-4xl ">
+    <div className="max-w-[1400px] dark:bg-black text-black bg-base-200 mx-auto flex flex-col items-center my-6">
+      <h2 className="font-bold dark:text-white mt-8 mb-10 text-4xl ">
         All Issues : {filteredIssues.length}
       </h2>
       {/* ------- */}
@@ -104,7 +104,7 @@ const AllIssues = () => {
 
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredIssues.map((issue) => (
-          <div key={issue._id} className=" bg-cyan-100 shadow-md rounded-xl">
+          <div key={issue._id} className=" dark:bg-gray-400 bg-base-100 shadow-md rounded-xl">
             <figure className="px-6 pt-6">
               <img
                 src={issue.image}

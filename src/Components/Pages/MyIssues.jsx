@@ -77,7 +77,7 @@ const MyIssues = () => {
   };
 
   return (
-    <div className="p-4 max-w-11/12 rounded-xl mx-auto">
+    <div className="max-w-11/12 rounded-xl mx-auto bg-base-100 dark:bg-gray-400 dark:text-black p-10">
       <h2 className="text-3xl font-bold mb-6 text-center">My Issues</h2>
 
       <div className="min-h-screen overflow-x-auto">
@@ -136,11 +136,11 @@ const MyIssues = () => {
       {/* Update Modal */}
       {showUpdateModal && selectedIssue && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg w-full max-w-md">
+          <div className="bg-white dark:bg-gray-400 p-6 rounded-lg w-full max-w-md">
             <h3 className="text-xl font-bold mb-4">Update Issue</h3>
             <form onSubmit={handleUpdateSubmit} className="space-y-3">
               <div>
-                <label className="block font-semibold">Title</label>
+                <label className="block  font-semibold">Title</label>
                 <input
                   type="text"
                   name="title"

@@ -53,7 +53,7 @@ const AddIssues = () => {
   };
 
   return (
-    <div className="max-w-11/12 md:max-w-5/12 lg:max-w-6/12 mx-auto p-6 bg-white rounded-lg shadow-lg my-8">
+    <div className="max-w-11/12 md:max-w-5/12 lg:max-w-6/12 mx-auto p-6 dark:bg-gray-400 dark:text-black bg-white rounded-lg shadow-lg my-8">
       <h2 className="text-3xl font-bold text-center mb-6">
         Report a New Issue
       </h2>

@@ -20,7 +20,7 @@ const ContributionDetails = ({ issueId, refresh, user }) => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg">
+    <div className="max-w-4xl mx-auto dark:bg-gray-400 text-black mt-10 bg-base-100 p-6 rounded-lg shadow-lg">
       <div className="mt-8">
         <h2 className="font-bold mt-10 text-4xl text-center mb-10">
           Contributors For This Issue

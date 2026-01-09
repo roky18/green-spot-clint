@@ -69,8 +69,8 @@ const IssueDetails = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg">
-      <div className="max-w-11/12 bg-gray-100 mx-auto p-6 rounded-lg grid grid-rows-1 md:grid-cols-12 gap-4 shadow-lg">
+    <div className="max-w-4xl mx-auto dark:bg-black bg-base-100 p-6 rounded-lg shadow-lg">
+      <div className="max-w-11/12 bg-gray-100 dark:bg-gray-400 dark:text-black mx-auto p-6 rounded-lg grid grid-rows-1 md:grid-cols-12 gap-4 shadow-lg">
         <div className=" p-4 left col-span-5 ">
           <div className="mb-6">
             <img
@@ -124,7 +124,7 @@ const IssueDetails = () => {
               ref={bidModalRef}
               className="modal modal-bottom sm:modal-middle"
             >
-              <div className="modal-box">
+              <div className="modal-box dark:bg-gray-400 ">
                 <h3 className="font-bold  text-lg">For Contribution</h3>
                 <p className="py-4">Please filap the form!</p>
 
@@ -224,9 +224,7 @@ const IssueDetails = () => {
 
                   <div>
                     <label className="label">
-                      <span className="label-text">
-                        Additional Info 
-                      </span>
+                      <span className="label-text">Additional Info</span>
                     </label>
                     <textarea
                       name="additionalInfo"

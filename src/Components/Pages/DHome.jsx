@@ -24,9 +24,9 @@ const DHome = () => {
   }, []);
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-11/12 mx-auto dark:bg-gray-400 bg-base-100 p-10 min-h-screen">
       <div className="flex justify-center items-center mt-12">
-        <h1 className="text-center font-bold text-5xl text-black">
+        <h1 className="text-center font-bold text-5xl text-black ">
           WELCOME.. To Dashboard Home Page!! <hr />
         </h1>
       </div>

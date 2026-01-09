@@ -7,10 +7,10 @@ import { Link } from "react-router";
 
 const Category = () => {
   return (
-    <div className="max-w-[1400px] pb-15 bg-gray-100 mx-auto flex flex-col items-center my-6">
+    <div className="max-w-[1400px] pb-15 dark:bg-black bg-gray-100 mx-auto flex flex-col items-center my-6">
       <h2 className="font-bold mt-16 mb-12 text-4xl ">Category</h2>
       <section className=" w-11/12 grid lg:grid-cols-4 md:grid-cols-3 gap-6 text-center">
-        <div className="hover:scale-105 shadow-xs rounded-xl bg-white space-y-2 font-semibold p-4">
+        <div className="hover:scale-105 shadow-xs rounded-xl dark:bg-gray-300 dark:text-black bg-white space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={garbage} />
           <h3>Garbage</h3>
           <p className="text-xs text-gray-500">
@@ -22,7 +22,7 @@ const Category = () => {
           </Link>
         </div>
 
-        <div className=" hover:scale-105 bg-white rounded-xl shadow-xs space-y-2 font-semibold p-4">
+        <div className=" hover:scale-105 bg-white rounded-xl dark:bg-gray-300 dark:text-black shadow-xs space-y-2 font-semibold p-4">
           <img
             className="w-full h-48 object-cover rounded-2xl"
             src={illegall}
@@ -37,7 +37,7 @@ const Category = () => {
           </Link>
         </div>
 
-        <div className=" hover:scale-105 bg-white rounded-xl shadow-xs space-y-2 font-semibold p-4">
+        <div className=" hover:scale-105 bg-white rounded-xl dark:bg-gray-300 dark:text-black shadow-xs space-y-2 font-semibold p-4">
           <img
             className="w-full h-48 object-cover rounded-2xl"
             src={PPbroken}
@@ -52,7 +52,7 @@ const Category = () => {
             <button className="btn btn-dash btn-info btn-xs">Show All</button>
           </Link>
         </div>
-        <div className=" hover:scale-105 bg-white rounded-xl shadow-xs space-y-2 font-semibold p-4">
+        <div className=" hover:scale-105 bg-white rounded-xl dark:bg-gray-300 dark:text-black shadow-xs space-y-2 font-semibold p-4">
           <img className="w-full h-48 object-cover rounded-2xl" src={RoadDam} />
           <h3>Road Damage</h3>
           <p className="text-xs text-gray-500">

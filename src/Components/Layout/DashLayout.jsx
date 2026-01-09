@@ -2,24 +2,21 @@ import React, { use } from "react";
 import { AuthContext } from "../Contex/AuthContex";
 import logoimage from "../../assets/Grn-icon.jpg";
 import { Link, NavLink, Outlet } from "react-router";
-import {
-  MdAssignmentAdd,
-  MdFavoriteBorder,
-  MdManageAccounts,
-  MdOutlineReportProblem,
-  MdPlayLesson,
-} from "react-icons/md";
+import { MdAssignmentAdd, MdPlayLesson } from "react-icons/md";
 import { GiCash } from "react-icons/gi";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useTheme } from "next-themes";
 
 const DashLayout = () => {
   const { user } = use(AuthContext);
+  const { theme, setTheme } = useTheme();
 
   return (
-    <div className="drawer lg:drawer-open w-19/20 mx-auto">
+    <div className="drawer dark:bg-black bg-gray-100 lg:drawer-open w-19/20 mx-auto">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Navbar */}
-        <nav className="navbar w-full bg-base-300">
+        <nav className="navbar w-full dark:bg-black bg-base-300">
           <label
             htmlFor="my-drawer-4"
             aria-label="open sidebar"
@@ -44,6 +41,16 @@ const DashLayout = () => {
           <div className="px-4 font-semibold text-green-500">
             Green Spot Dashboard
           </div>
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-lg mr-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
+          >
+            {theme === "dark" ? (
+              <FaSun className="w-2 h-2" />
+            ) : (
+              <FaMoon className="w-2 h-2" />
+            )}
+          </button>
         </nav>
         {/* Page content here */}
         <Outlet></Outlet>
@@ -55,12 +62,12 @@ const DashLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
+        <div className="flex min-h-full flex-col items-start dark:bg-black bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
           {/* Sidebar content here */}
           <ul className="menu w-full grow">
             <li>
               <Link to="/">
-                <img className="w-14" src={logoimage} alt="" />
+                <img className="w-14 rounded-full" src={logoimage} alt="" />
               </Link>
             </li>
             {/* List item */}
@@ -117,33 +124,6 @@ const DashLayout = () => {
                 <GiCash />
                 <span className="is-drawer-close:hidden">MyContribution</span>
               </NavLink>
-
-              
-            </li>
-            {/* List item */}
-            <li>
-              <button
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Settings"
-              >
-                {/* Settings icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  fill="none"
-                  stroke="currentColor"
-                  className="my-1.5 inline-block size-4"
-                >
-                  <path d="M20 7h-9"></path>
-                  <path d="M14 17H5"></path>
-                  <circle cx="17" cy="17" r="3"></circle>
-                  <circle cx="7" cy="7" r="3"></circle>
-                </svg>
-                <span className="is-drawer-close:hidden">Settings</span>
-              </button>
             </li>
           </ul>
         </div>

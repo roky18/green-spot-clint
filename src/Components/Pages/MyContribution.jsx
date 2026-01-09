@@ -55,11 +55,11 @@ const MyContribution = () => {
   };
 
   return (
-    <div className="overflow-x-auto mt-10 w-full px-4 min-h-screen sm:px-6 my-8 p-6 max-w-11/12 mx-auto rounded-xl lg:px-8">
+    <div className="overflow-x-auto mt-10 w-full px-4 min-h-70% bg-base-100 p-10 dark:bg-gray-400 text-black sm:px-6 my-8  max-w-11/12 mx-auto rounded-xl lg:px-8">
       <h2 className="text-3xl text-center font-bold  mb-4">My Contributions</h2>
       <table className="table text-center table-zebra w-full">
         <thead>
-          <tr className="text-gray-500">
+          <tr className="text-gray-500 dark:text-black">
             <th>SL</th>
             <th>Issue Title</th>
             <th>Category</th>

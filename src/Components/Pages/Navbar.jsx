@@ -3,8 +3,11 @@ import logo from "../../assets/logo.png";
 import { use } from "react";
 import { AuthContext } from "../Contex/AuthContex";
 import Swal from "sweetalert2";
+import { useTheme } from "next-themes";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const { user, logout } = use(AuthContext);
   const navigate = useNavigate();
 
@@ -27,7 +30,7 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <div>
+      <div className="dark:text-white">
         {user ? (
           <div className="flex">
             <li>
@@ -40,7 +43,6 @@ const Navbar = () => {
             <li>
               <NavLink to="/dashboard/myIssues">My Issues</NavLink>
             </li>
-            
           </div>
         ) : (
           <div className="flex text-xl">
@@ -90,6 +92,12 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="text-lg mr-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
+        >
+          {theme === "dark" ? <FaSun className="w-2 h-2" /> : <FaMoon className="w-2 h-2" />}
+        </button>
         {user ? (
           <div className="dropdown dropdown-end">
             <div
@@ -108,7 +116,7 @@ const Navbar = () => {
 
             <ul
               tabIndex={0}
-              className="menu dropdown-content mt-3 p-2 shadow bg-base-100 rounded-xl w-52"
+              className="menu dropdown-content mt-3 p-2 shadow dark:bg-black bg-base-100 rounded-xl w-52"
             >
               <li className="font-semibold text-center py-2">
                 {user.displayName}
