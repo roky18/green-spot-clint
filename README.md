@@ -40,7 +40,7 @@ Users can submit new issue reports, view community complaints, filter by categor
 
 Follow these steps to run the frontend locally:
 
-1. **Clone the Repo:** `https://github.com/roky18/digital-life-lessons-clint.git`
+1. **Clone the Repo:** `https://github.com/roky18/green-spot-clint.git`
 2. **Install dependencies:** `npm install`
 3. **Environment Variables:** Create a `.env.local` file and add:
  ```env
