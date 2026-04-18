@@ -52,10 +52,13 @@ Follow these steps to run the frontend locally:
    VITE_appId=your_app_id
 ```
 4. **Run the App:** `npm run dev`
-👤 Author
-MD RAKIBUL ISLAM ROKY
-Email: roky18bd@gmail.com
-LinkedIn LinkedIn: https://linkedin.com/in/roky18
-📞 Mobile: +8801727020930
+
+## 👤 Author
+
+MD RAKIBUL ISLAM ROKY 
+
+- ** Email: roky18bd@gmail.com
+- ** LinkedIn: https://linkedin.com/in/roky18
+- ** 📞 Mobile: +8801727020930
 
 ✨ Green Spot — Reporting for a cleaner tomorrow. Empowering communities, one report at a time.
