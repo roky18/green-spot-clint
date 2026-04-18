@@ -31,8 +31,8 @@ Users can submit new issue reports, view community complaints, filter by categor
 - **Utilities:** Axios, SweetAlert2, jsPDF, React Icons
 
 ### Backend
-- **Database:** Firebase Firestore / Realtime Database
-- **Hosting:** Firebase Hosting
+- Node.js & Express.js
+- MongoDB
 
 ---
 
